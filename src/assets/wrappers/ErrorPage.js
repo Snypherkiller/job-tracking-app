@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 const Wrapper = styled.main`
   text-align: center;
+  margin-top: 10rem;
+
+
   img {
     max-width: 600px;
     display: block;
@@ -10,6 +13,7 @@ const Wrapper = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+
   h3 {
     margin-bottom: 0.5rem;
   }
