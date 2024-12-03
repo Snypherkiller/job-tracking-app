@@ -20,7 +20,7 @@ const Landing = () => {
             dreamcatcher cupping grailed, la croix readymade next level edison bulb pok pok bitters tonx pork belly
             biodiesel adaptogen.
           </p>
-          <Link to={'/Login'}><button className="btn btn-hero">Login/Register</button>
+          <Link to={'/Register'}><button className="btn btn-hero">Login/Register</button>
           </Link>
         </div>
         <img src={main} alt="job hunt" className="img main-img" />
