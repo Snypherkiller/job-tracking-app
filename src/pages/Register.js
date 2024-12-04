@@ -20,7 +20,7 @@ const Register = () => {
 
     const toggleMember =()=>
     {
-        setValues({...values,ismember:!values.ismember})
+        setValues({values,ismember:!values.ismember})
     }
 
     const handleChange =(e)=>{
@@ -38,16 +38,31 @@ const Register = () => {
     <Wrapper className='full-page'>
       <form className='form'> 
         <Logo/>
-        <h3>Register</h3>
+        <h3>{values.ismember ? 'Login': 'Register'}</h3>
+        {!values.ismember && (
+
+            <FormRow type='text' name='name' value={values.name} handleChange={handleChange}/>
+
+
+        )}
         {values.showAlert && <Alert/>}
-        <FormRow type='text' name='name' value={values.name} handleChange={handleChange}/>
         <FormRow type='text' name='email' value={values.email} handleChange={handleChange}/>
         <FormRow type='text' name='password' value={values.password} handleChange={handleChange}/>
         <button type='submit' className='btn btn-block'>Submit</button>
+{values.ismember && (
+    
+    <p>
+       Not a member yet? <button type='button' onClick={toggleMember} className='member-btn'>Register</button>
+    </p>
 
-<p>
-    <button type='button' onClick={toggleMember} className='member-btn'>Register</button>
-</p>
+) }
+
+{!values.ismember && (
+    <p>
+        Already a membert? <button type='button' onClick={toggleMember} className='member-btn'>Login</button>
+    </p>
+)}
+
       </form>
     </Wrapper>
   )
