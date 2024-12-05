@@ -3,6 +3,7 @@ import Logo from '../Component/Logo'
 import Wrapper from '../assets/wrappers/RegisterPage'
 import FormRow from '../Component/FormRow'
 import Alert from '../Component/Alert'
+import { UseAppContext } from '../context/AppContext'
 
 
 const initialState = {
@@ -10,12 +11,13 @@ const initialState = {
     name:'',
     email:'',
     password:'',
-    ismember:true,
-    showAlert:false
+    ismember:true
 }
 
 const Register = () => {
     const [values,setValues]=useState(initialState)
+
+    const {isLoading,showAlert} = UseAppContext ()
 
 
     const toggleMember =()=>
