@@ -1,11 +1,1 @@
-import React from 'react'
-
-const Action = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Action
+export const DISPLAY_ALERT ='SHOW_ALERT'
