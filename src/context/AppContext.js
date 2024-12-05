@@ -25,6 +25,9 @@ const AppProvider = ({children}) => {
     dispatch({type:DISPLAY_ALERT})
   }
    
+
+
+
   return (
     <AppContext.Provider value={{...state,displayAlert}}>
       {children}
@@ -39,4 +42,4 @@ const UseAppContext =()=>{
 
 }
 
-export  {AppProvider, initialState ,UseAppContext}
+export  {AppProvider, initialState ,UseAppContext,}

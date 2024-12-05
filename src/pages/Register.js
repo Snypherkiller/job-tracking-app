@@ -4,8 +4,9 @@ import Wrapper from '../assets/wrappers/RegisterPage'
 import FormRow from '../Component/FormRow'
 import Alert from '../Component/Alert'
 import { UseAppContext } from '../context/AppContext'
-
-
+import { DISPLAY_ALERT } from '../context/Action'
+import { AppProvider } from '../context/AppContext'
+import displayAlert from '../context/AppContext'
 const initialState = {
 
     name:'',
@@ -26,19 +27,23 @@ const Register = () => {
     }
 
     const handleChange =(e)=>{
-        console.log(e.target)
-    }
+        setValues({...values,[e.target.name]:e.target.value})    }
+
+
     const onSubmit = (e) => {
     
         e.preventDefault()
-        console.log(e.target)
-
+        const{name,email,password,ismember}=values
+        if(!email || !password ||(!ismember && !name)){
+            displayAlert()
+            return
+        }
     }
 
 
   return (
     <Wrapper className='full-page'>
-      <form className='form'> 
+      <form className='form' onSubmit={onSubmit}> 
         <Logo/>
         <h3>{values.ismember ? 'Login': 'Register'}</h3>
         {!values.ismember && (
