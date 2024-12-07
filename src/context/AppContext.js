@@ -13,7 +13,7 @@ const initialState = {
 
 }
 
- const AppContext = createContext();
+const AppContext = React.createContext();
 
 
 const AppProvider = ({children}) => {
@@ -29,7 +29,7 @@ const AppProvider = ({children}) => {
 
 
   return (
-    <AppContext.Provider value={{...state,displayAlert}}>
+    <AppContext.Provider value={{state,displayAlert}}>
       {children}
     </AppContext.Provider>
 
@@ -42,4 +42,4 @@ const UseAppContext =()=>{
 
 }
 
-export  {AppProvider, initialState ,UseAppContext,}
+export  {AppProvider, initialState ,UseAppContext}

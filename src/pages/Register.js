@@ -6,7 +6,6 @@ import Alert from '../Component/Alert'
 import { UseAppContext } from '../context/AppContext'
 import { DISPLAY_ALERT } from '../context/Action'
 import { AppProvider } from '../context/AppContext'
-import displayAlert from '../context/AppContext'
 const initialState = {
 
     name:'',
@@ -18,7 +17,7 @@ const initialState = {
 const Register = () => {
     const [values,setValues]=useState(initialState)
 
-    const {isLoading,showAlert} = UseAppContext ()
+    const {isLoading,showAlert,displayAlert} = UseAppContext ()
 
 
     const toggleMember =()=>
@@ -38,6 +37,7 @@ const Register = () => {
             displayAlert()
             return
         }
+        console.log(values);
     }
 
 
