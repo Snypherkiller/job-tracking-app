@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required:[true, 'Please provide a email'],
-        validator:{
+        validate:{
             validator:validator.isEmail,
             message:"Please provide a Valid Email"
         },
@@ -24,7 +24,6 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required:[true, 'Please provide a password'],
-        minLength:8,
         maxLength:8,
         trim:true,
     }, 
@@ -40,9 +39,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true,
         maxLength:20,
+        default:"Default",
 
     }
 })
 
 
-export default userSchema
+const User = mongoose.model("user",userSchema);
+export default User

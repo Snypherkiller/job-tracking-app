@@ -1,7 +1,8 @@
 import User from "../../models/user.js"
+import mongoose from "mongoose"
 
 
-const register =async(req,res)=>
+const register =async(req,res,next)=>
 {
     try {
 
@@ -9,12 +10,18 @@ const register =async(req,res)=>
         res.status(201).json({user})
         
     } catch (error) {
-        res.status(500).json({msg:"There is an Error"})
+        console.log(error)
+        next(error)
+        
     }
 }
 const login =async(req,res)=>
 {
-    res.send('Login user')
+    try {
+        
+    } catch (error) {
+        
+    }
 }
 const updateUser =async(req,res)=>
 {
