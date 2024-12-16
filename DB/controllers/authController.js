@@ -1,4 +1,4 @@
-import User from "../../models/user"
+import User from "../../models/user.js"
 
 
 const register =async(req,res)=>
