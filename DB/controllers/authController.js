@@ -1,9 +1,16 @@
-import userSchema from "../../models/user"
+import User from "../../models/user"
 
 
 const register =async(req,res)=>
 {
-    res.send('Register user')
+    try {
+
+        const user = await User.create(req.body)
+        res.status(201).json({user})
+        
+    } catch (error) {
+        res.status(500).json({msg:"There is an Error"})
+    }
 }
 const login =async(req,res)=>
 {
