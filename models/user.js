@@ -53,8 +53,7 @@ userSchema.pre('save',async function(){
 })
 
 userSchema.method.createJWT = function(){
-    console.log(this)
-}
+return jwt.sign({userId:this._id}),'jwtSecret',{expiresIn:'1d'}}
 
 
 const User = mongoose.model("user",userSchema);
