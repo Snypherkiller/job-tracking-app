@@ -51,6 +51,10 @@ userSchema.pre('save',async function(){
 
 })
 
+userSchema.method.createJWT = function(){
+    console.log(this)
+}
+
 
 const User = mongoose.model("user",userSchema);
 

@@ -17,6 +17,7 @@
     "express-async-errors": "^3.1.1",
     "http-status-code": "^2.1.0",
     "job-tracking-app": "file:",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.0",
     "validator": "^13.12.0"
   },
